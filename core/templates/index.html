@@ -11,6 +11,23 @@
 
     <p>{{ outro }}</p>
 
-    <span>{{ logado }}</span>
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preços</th>
+                <th>Estoque</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produto in produtos %}
+            <tr>
+                <td>{{ produto.nome }}</td>
+                <td>{{ produto.preco }}</td>
+                <td>{{ produto.estoque }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>

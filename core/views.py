@@ -1,18 +1,15 @@
 from django.shortcuts import render
 
+from .models import Produto
+
 
 def index(request):
-    print(dir(request.user))
-    print(f"User: {request.user}")
+    produtos = Produto.objects.all()
 
-    if str(request.user) == 'AnonymousUser':
-        teste = 'Usuário não logado'
-    else:
-        teste = 'Usuário logado'
     context = {
-        'curso': 'Programnação Web com Django Framework',
+        'curso': 'Programação Web com Django Framework',
         'outro': 'Django é massa!',
-        'logado': teste
+        'produtos': produtos
     }
     return render(request, 'index.html', context)
 
