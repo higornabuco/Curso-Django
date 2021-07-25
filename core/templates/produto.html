@@ -16,7 +16,6 @@
                 <th>Estoque</th>
         </thead>
         <tbody>
-        {% for produto in produtos %}
             <tr>
                 <td><a href="{% url 'index' %}">{{ produto.nome }}</a></td>
                 <tr>{{ produto.preco }}</tr>
