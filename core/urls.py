@@ -1,11 +1,10 @@
 from django.urls import path
-from django.urls.conf import include
 
-from .views import index, contato
+from .views import index, contato, produto
 
 
 urlpatterns = [
-    path('grappelli/', include ('grappelli.urls')), # grappelli URLS
-    path('index', index),
-    path('contato', contato),
+    path('index', name='index'),
+    path('contato', contato, name='contato'),
+    path('produto,<int: pk>', produto, name='produto'),
 ]
